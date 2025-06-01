@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZX4 Furniture House</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .price-range {
+      display: flex;
+      gap: 10px;
+    }
+    .price-range input {
+      width: 100%;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Furniture Query Form</h2>
+    <form action="submit_query.php" method="POST">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="type">Furniture Type:</label>
+      <select id="type" name="type" required>
+        <option value="">-- Select --</option>
+        <option value="sofa">Sofa</option>
+        <option value="table">Table</option>
+        <option value="chair">Chair</option>
+        <option value="bed">Bed</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>Price Range (₹):</label>
+      <div class="price-range">
+        <input type="number" name="min_price" placeholder="Min (₹10,000)" min="10000" max="500000" required>
+        <input type="number" name="max_price" placeholder="Max (₹5,00,000)" min="10000" max="500000" required>
+      </div>
+
+      <label for="query">Your Query:</label>
+      <textarea id="query" name="query" rows="4" placeholder="Enter your query here..." required></textarea>
+
+      <button type="submit">Submit Query</button>
+    </form>
+  </div>
+</body>
+</html>
